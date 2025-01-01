@@ -7,6 +7,10 @@ export default {
   theme: {
     extend: {
       colors:{
+        grey:{
+          app:"#f9fbfc"
+
+        },
         purple:{
           300:"#e0e7ff",
           500:"#5046e4",

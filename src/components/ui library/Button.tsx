@@ -4,14 +4,14 @@ interface ButtonProps{
     text:String,
     startIcon?:any,
     endIcon?:any,
-    onClick:()=>void
+    onClick?:()=>void
 
 }
 const varientStyles={
     "primary":"bg-purple-500 text-white",
     "secondary":"bg-purple-300 text-purple-600"
 }
-const defaultStyle="rounded-md "
+const defaultStyle="rounded-md font-normal py-2 px-4  "
 const sizeStyle={
     "sm":"py-2 px-4",
     "md":"py-3 px-6",
@@ -26,7 +26,7 @@ export const Button=(props:ButtonProps)=>{
     return(
         <button onClick={onClick} className={`${defaultStyle} ${varientStyles[varient]} ${sizeStyle[size]} `}>
             <div className="flex items-center">
-           {startIcon?<div className="pr-2">{startIcon}</div>:null}  {text} {endIcon}
+           {startIcon?<div className="pr-2 ">{startIcon}</div>:null}  {text} {endIcon} 
            </div>
             
 
