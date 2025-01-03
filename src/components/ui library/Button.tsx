@@ -4,7 +4,9 @@ interface ButtonProps{
     text:String,
     startIcon?:any,
     endIcon?:any,
-    onClick?:()=>void
+    onClick?:()=>void,
+    fullWidth:boolean,
+    isLoading?:boolean
 
 }
 const varientStyles={
@@ -19,12 +21,13 @@ const sizeStyle={
 }
 
 export const Button=(props:ButtonProps)=>{
-    const {varient,size,text,onClick,startIcon,endIcon}=props
+    const {varient,size,text,onClick,startIcon,endIcon,fullWidth,isLoading}=props
     //const color=varient=="primary"?"blue-300":"blue-100"
     //const buttonSize=size=="lg"?"p-22":size=="sm"?"p-8":size=="md"?"p-14":"p-4"
     //const 
+    const widthParmas= fullWidth?"w-full":"w-auto"
     return(
-        <button onClick={onClick} className={`${defaultStyle} ${varientStyles[varient]} ${sizeStyle[size]} `}>
+        <button onClick={onClick}  className={`${defaultStyle}  ${varientStyles[varient]} ${sizeStyle[size]} ${widthParmas} ${isLoading?"opacity-20":null}`}>
             <div className="flex items-center">
            {startIcon?<div className="pr-2 ">{startIcon}</div>:null}  {text} {endIcon} 
            </div>
